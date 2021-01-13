@@ -83,13 +83,13 @@ dir_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4540Pr/"
 doublets_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4540Pr/doublet.txt"
 ## Removing doublets
 HP4540Pr <- read_data(dir_path, "HP4540Pr")
-HP4540Pr <- doublets_removing(HP4540Pr, doublets_path, 200, 7500, 15)
+HP4540Pr <- doublets_removing(HP4540Pr, doublets_path, 200, 7000, 25)
 HP4540Pr <- data_correction(HP4540Pr, "HP4540Pr_no_doublets")
 HP4540Pr <- markers_seeking(HP4540Pr, "HP4540Pr_no_doublets")
 save(HP4540Pr, file = "HP4540Pr_no_doublets.RData")
 ## Do not remove doublets
 HP4540Pr <- read_data(dir_path, "HP4540Pr")
-HP4540Pr <- doublets_no_removing(HP4540Pr, 200, 7500, 15)
+HP4540Pr <- doublets_no_removing(HP4540Pr, 200, 7000, 25)
 HP4540Pr <- data_correction(HP4540Pr, "HP4540Pr_with_doublets")
 HP4540Pr <- markers_seeking(HP4540Pr, "HP4540Pr_with_doublets")
 save(HP4540Pr, file = "HP4540Pr_with_doublets.RData")
@@ -102,13 +102,13 @@ dir_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4313Pr/"
 doublets_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4313Pr/doublet.txt"
 ## Removing doublets
 HP4313Pr <- read_data(dir_path, "HP4313Pr")
-HP4313Pr <- doublets_removing(HP4313Pr, doublets_path, 200, 7500, 15)
+HP4313Pr <- doublets_removing(HP4313Pr, doublets_path, 200, 9500, 25)
 HP4313Pr <- data_correction(HP4313Pr, "HP4313Pr_no_doublets")
 HP4313Pr <- markers_seeking(HP4313Pr, "HP4313Pr_no_doublets")
 save(HP4313Pr, file = "HP4313Pr_no_doublets.RData")
 ## Do not remove doublets
 HP4313Pr <- read_data(dir_path, "HP4313Pr")
-HP4313Pr <- doublets_no_removing(HP4313Pr, 200, 7500, 15)
+HP4313Pr <- doublets_no_removing(HP4313Pr, 200, 9500, 25)
 HP4313Pr <- data_correction(HP4313Pr, "HP4313Pr_with_doublets")
 HP4313Pr <- markers_seeking(HP4313Pr, "HP4313Pr_with_doublets")
 save(HP4313Pr, file = "HP4313Pr_with_doublets.RData")
@@ -121,13 +121,13 @@ dir_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4313Re/"
 doublets_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4313Re/doublet.txt"
 ## Removing doublets
 HP4313Re <- read_data(dir_path, "HP4313Re")
-HP4313Re <- doublets_removing(HP4313Re, doublets_path, 200, 7500, 15)
+HP4313Re <- doublets_removing(HP4313Re, doublets_path, 200, 9000, 25)
 HP4313Re <- data_correction(HP4313Re, "HP4313Re_no_doublets")
 HP4313Re <- markers_seeking(HP4313Re, "HP4313Re_no_doublets")
 save(HP4313Re, file = "HP4313Re_no_doublets.RData")
 ## Do not remove doublets
 HP4313Re <- read_data(dir_path, "HP4313Re")
-HP4313Re <- doublets_no_removing(HP4313Re, 200, 7500, 15)
+HP4313Re <- doublets_no_removing(HP4313Re, 200, 9000, 25)
 HP4313Re <- data_correction(HP4313Re, "HP4313Re_with_doublets")
 HP4313Re <- markers_seeking(HP4313Re, "HP4313Re_with_doublets")
 save(HP4313Re, file = "HP4313Re_with_doublets.RData")
@@ -140,13 +140,13 @@ dir_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4568Pr/"
 doublets_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4568Pr/doublet.txt"
 ## Removing doublets
 HP4568Pr <- read_data(dir_path, "HP4568Pr")
-HP4568Pr <- doublets_removing(HP4568Pr, doublets_path, 200, 7500, 15)
+HP4568Pr <- doublets_removing(HP4568Pr, doublets_path, 200, 9500, 25)
 HP4568Pr <- data_correction(HP4568Pr, "HP4568Pr_no_doublets")
 HP4568Pr <- markers_seeking(HP4568Pr, "HP4568Pr_no_doublets")
 save(HP4568Pr, file = "HP4568Pr_no_doublets.RData")
 ## Do not remove doublets
 HP4568Pr <- read_data(dir_path, "HP4568Pr")
-HP4568Pr <- doublets_no_removing(HP4568Pr, 200, 7500, 15)
+HP4568Pr <- doublets_no_removing(HP4568Pr, 200, 9500, 25)
 HP4568Pr <- data_correction(HP4568Pr, "HP4568Pr_with_doublets")
 HP4568Pr <- markers_seeking(HP4568Pr, "HP4568Pr_with_doublets")
 save(HP4568Pr, file = "HP4568Pr_with_doublets.RData")
@@ -158,13 +158,13 @@ dir_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4568Re/"
 doublets_path <- "~/Dropbox/BRCA1-PARPi-10X/Seurat_Raw_Data/HP4568Re/doublet.txt"
 ## Removing doublets
 HP4568Re <- read_data(dir_path, "HP4568Re")
-HP4568Re <- doublets_removing(HP4568Re, doublets_path, 200, 7500, 15)
+HP4568Re <- doublets_removing(HP4568Re, doublets_path, 200, 8500, 25)
 HP4568Re <- data_correction(HP4568Re, "HP4568Re_no_doublets")
 HP4568Re <- markers_seeking(HP4568Re, "HP4568Re_no_doublets")
 save(HP4568Re, file = "HP4568Re_no_doublets.RData")
 ## Do not remove doublets
 HP4568Re <- read_data(dir_path, "HP4568Re")
-HP4568Re <- doublets_no_removing(HP4568Re, 200, 7500, 15)
+HP4568Re <- doublets_no_removing(HP4568Re, 200, 8500, 25)
 HP4568Re <- data_correction(HP4568Re, "HP4568Re_with_doublets")
 HP4568Re <- markers_seeking(HP4568Re, "HP4568Re_with_doublets")
 save(HP4568Re, file = "HP4568Re_with_doublets.RData")
