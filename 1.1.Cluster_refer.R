@@ -26,6 +26,11 @@ load("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4540Pr/HP4540Pr_no_doublets.RDa
 HP4540Pr <- ClusterFinding(HP4540Pr, "HP4540Pr")
 save(HP4540Pr, file = "HP4540Pr_no_doublets.RData")
 
+setwd("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4540Re/")
+load("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4540Re/HP4540Re2_no_doublets.RData")
+HP4540Re2 <- ClusterFinding(HP4540Re2, "HP4540Re2")
+save(HP4540Re2, file = "HP4540Re2_no_doublets.RData")
+
 setwd("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4313Pr/")
 load("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4313Pr/HP4313Pr_no_doublets.RData")
 HP4313Pr <- ClusterFinding(HP4313Pr, "HP4313Pr")
@@ -45,3 +50,4 @@ setwd("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4568Re/")
 load("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4568Re/HP4568Re_no_doublets.RData")
 HP4568Re <- ClusterFinding(HP4568Re, "HP4568Re")
 save(HP4568Re, file = "HP4568Re_no_doublets.RData")
+
