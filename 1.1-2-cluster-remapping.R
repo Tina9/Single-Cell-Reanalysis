@@ -34,7 +34,7 @@ HP4540Re_new_cluster_ids <- c("Tumor", "Tumor", "Tumor", "Macrophage",
                               "Neutrophils", "stromal")
 label_remapping(HP4540Re2, HP4540Re_new_cluster_ids, "HP4540Re2")
 HP4540Re2 <- cluster_metadata(HP4540Re2, HP4540Re_new_cluster_ids)
-save(HP4540Re2, file = "HP4540Re_no_doublets.RData")
+save(HP4540Re2, file = "HP4540Re2_no_doublets.RData")
 
 setwd("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4313Pr/")
 load("~/Dropbox/BRCA1-PARPi-10X/Latest-Version/HP4313Pr/HP4313Pr_no_doublets.RData")
