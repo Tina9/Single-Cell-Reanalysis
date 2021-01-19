@@ -2,8 +2,6 @@ library(Seurat)
 library(dplyr)
 library(patchwork)
 library(cowplot)
-library(ggplot2)
-library(SingleR)
 options(scipen = 20)
 
 doublets_checking <- function(pbmc_no_doublets, pbmc_with_doublets, sample_name){
@@ -12,7 +10,7 @@ doublets_checking <- function(pbmc_no_doublets, pbmc_with_doublets, sample_name)
   p3 <- DimPlot(pbmc_with_doublets, reduction = "umap", label = T)
   p4 <- FeaturePlot(pbmc_with_doublets, features = "doublets_score", cols = c("white", "red"))
   p5 <- plot_grid(p1, p2, p3, p4)
-
+  
   doublets_pdf <- paste(sample_name, "_doublets.pdf", sep = "")
   pdf(doublets_pdf, width = 12, height = 9)
   plot(p5)
