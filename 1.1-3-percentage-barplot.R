@@ -1,4 +1,5 @@
 library(dplyr)
+library(ggplot2)
 library(RColorBrewer)
 
 component_stat <- function(pbmc, sample_name){
@@ -60,3 +61,38 @@ HP4540Pr_percent_plot <- component_stat(HP4540Pr, "HP4540Pr")
 HP4540Re_percent_plot <- component_stat(HP4540Re2, "HP4540Re")
 HP4540_percent_plot <- rbind(HP4540Pr_percent_plot, HP4540Re_percent_plot)
 percent_plot(HP4540_percent_plot, "HP4540")
+
+
+
+
+######################################################################
+########### Calculating the max difference between two groups ########
+######################################################################
+diff_cal <- function(pbmcPr, pbmcRe, sample_name){
+  pbmc <- merge(pbmcPr, pbmcRe, by = "identified_clusters", all = T)
+  pbmc[is.na(pbmc)] <- 0
+  pbmc$diff <- pbmc$per.y - pbmc$per.x
+  pbmc$sample <- sample_name
+  return(pbmc)
+}
+
+HP4313 <- diff_cal(HP4313Pr_percent_plot, HP4313Re_percent_plot, "HP4313")
+HP4540 <- diff_cal(HP4540Pr_percent_plot, HP4540Re_percent_plot, "HP4540")
+HP4568 <- diff_cal(HP4568Pr_percent_plot, HP4568Re_percent_plot, "HP4568")
+total_diff <- rbind(HP4313, HP4540, HP4568)
+
+total_diff$diff <- abs(total_diff$diff)
+total_diff$sample <- factor(total_diff$sample, levels = c("HP4540", "HP4313", "HP4568"))
+
+ggplot(data = total_diff, aes(x = identified_clusters, y = diff, fill = sample)) +
+  geom_bar(stat = "identity", color="black", position=position_dodge()) +
+  scale_fill_manual(values = c("yellow", "darkblue", "red")) +
+  #facet_grid(~sample) +
+  #theme_classic() +
+  xlab("Cell Types") +
+  ylab("Cluster Percent Variation") +
+  labs(fill = "Group", size = 12) +
+  theme(text = element_text(size = 18),
+        axis.text.x = element_text(angle = 45, hjust = 1, colour = "black"),
+        axis.text.y = element_text(colour = "black")
+  )
