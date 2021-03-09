@@ -105,3 +105,5 @@ immune_new_cluster_ids <- c("Tumor", "Tumor", "Tumor",
 colnames(immune.combined@meta.data)[9] <- "identified_sep_clusters"
 immune.combined <- cluster_metadata(immune.combined, immune_new_cluster_ids)
 count_cluster_cells(immune.combined, "inte_metadata")
+
+save(immune.combined, file = "integrate__no_doublets.RData")
