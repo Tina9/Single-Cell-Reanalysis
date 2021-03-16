@@ -92,7 +92,7 @@ immune.combined <- RenameIdents(immune.combined,
                                 "12" = "Tumor", "13" = "Endothelia", "14" = "Tumor",
                                 "15" = "Tumor", "16" = "B cell", "17" = "Tumor",
                                 "18" = "Fibroblast", "19" = "Tumor", "20" = "T cell",
-                                "21" = "Tumor", "22" = "Endothelia")
+                                "21" = "Red blood cell", "22" = "Endothelia")
 data_visualization(immune.combined, "Annot_Cluster")
 immune_new_cluster_ids <- c("Tumor", "Tumor", "Tumor",
                             "Macrophage", "Tumor", "Tumor",
@@ -101,7 +101,7 @@ immune_new_cluster_ids <- c("Tumor", "Tumor", "Tumor",
                             "Tumor", "Endothelia", "Tumor",
                             "Tumor", "B cell", "Tumor",
                             "Fibroblast", "Tumor", "T cell",
-                            "Tumor", "Endothelia")
+                            "Red blood cell", "Endothelia")
 colnames(immune.combined@meta.data)[9] <- "identified_sep_clusters"
 immune.combined <- cluster_metadata(immune.combined, immune_new_cluster_ids)
 count_cluster_cells(immune.combined, "inte_metadata")
